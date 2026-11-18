@@ -2,6 +2,20 @@
 Release notes
 *************
 
+Unreleased
+==========
+
+- Add the versioned human-review training and release package
+  :mod:`recordlinkage.review`. Labels bind a positive/negative/unknown
+  decision to a dataset+record pair and the source content versions;
+  stale, conflicting and duplicate imports are handled explicitly.
+  Reviewed positives and negatives only are used for supervised fitting
+  (unknown is never a negative), all candidates are scored, and the
+  labels, feature schema, fitted classifier and pairwise results are
+  published together as an immutable generation. Fitting or writing
+  failures keep the previous generation available. The existing
+  annotation and classifier APIs are unchanged.
+
 Version 0.15
 ============
 
